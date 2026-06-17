@@ -871,7 +871,7 @@ let note = noteEl.value.trim();
         }
 
         // ================= 핵심 Riegel 통계 분석 엔진 =================
-        function executeStatisticalAnalysis() {
+        window.executeStatisticalAnalysis = function() {
             let current10kMins = parseFloat(document.getElementById('current-10k-mm').value) || 90;
             let targetDist = parseFloat(document.getElementById('target-dist').value);
             let targetHH = parseInt(document.getElementById('target-hh').value) || 1;
