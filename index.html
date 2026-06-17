@@ -429,6 +429,7 @@
         let runningLogs = [];
         
         function saveDailyLog() {
+                console.log('saveDailyLog 시작');
             let date = document.getElementById('daily-log-date').value;
             let distance = parseFloat(document.getElementById('daily-log-distance').value) || 0;
             let note = document.getElementById('daily-log-note').value.trim();
