@@ -433,9 +433,15 @@
 
     console.log('1');
 
-    let date = document.getElementById('daily-log-date').value;
-    let distance = parseFloat(document.getElementById('daily-log-distance').value) || 0;
-    let note = document.getElementById('daily-log-note').value.trim();
+    let dateEl = document.getElementById('daily-log-date');
+let distanceEl = document.getElementById('daily-log-distance');
+let noteEl = document.getElementById('daily-log-note');
+
+if (!dateEl || !distanceEl || !noteEl) return;
+
+let date = dateEl.value;
+let distance = parseFloat(distanceEl.value) || 0;
+let note = noteEl.value.trim();
 
     console.log('2', date);
 
