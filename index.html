@@ -449,7 +449,7 @@ let note = noteEl.value.trim();
         alert('날짜를 선택해주세요.');
         return;
     }
-        }
+        
     console.log('3');
 
     runningLogs.push({
@@ -470,31 +470,8 @@ let note = noteEl.value.trim();
 
     renderDailyLogs();
 
-    console.log('6');
-} {
-                console.log('saveDailyLog 시작');
-            let date = document.getElementById('daily-log-date').value;
-            let distance = parseFloat(document.getElementById('daily-log-distance').value) || 0;
-            let note = document.getElementById('daily-log-note').value.trim();
-
-            if (!date) {
-                alert('날짜를 선택해주세요.');
-                return;
-            }
-
-            runningLogs.push({
-                date,
-                distance,
-                note,
-                createdAt: new Date().toISOString()
-            });
-
-            localStorage.setItem('runningLogs', JSON.stringify(runningLogs));
-            renderDailyLogs();
-            document.getElementById('daily-log-date').value = '';
-            document.getElementById('daily-log-distance').value = '';
-            document.getElementById('daily-log-note').value = '';
         }
+
 
         function loadDailyLogs() {
             let stored = localStorage.getItem('runningLogs');
