@@ -434,6 +434,42 @@
         let runningLogs = [];
         
         function saveDailyLog() {
+
+    console.log('1');
+
+    let date = document.getElementById('daily-log-date').value;
+    let distance = parseFloat(document.getElementById('daily-log-distance').value) || 0;
+    let note = document.getElementById('daily-log-note').value.trim();
+
+    console.log('2', date);
+
+    if (!date) {
+        alert('날짜를 선택해주세요.');
+        return;
+    }
+
+    console.log('3');
+
+    runningLogs.push({
+        date,
+        distance,
+        note,
+        createdAt: new Date().toISOString()
+    });
+
+    console.log('4');
+
+    localStorage.setItem(
+        'runningLogs',
+        JSON.stringify(runningLogs)
+    );
+
+    console.log('5');
+
+    renderDailyLogs();
+
+    console.log('6');
+} {
                 console.log('saveDailyLog 시작');
             let date = document.getElementById('daily-log-date').value;
             let distance = parseFloat(document.getElementById('daily-log-distance').value) || 0;
